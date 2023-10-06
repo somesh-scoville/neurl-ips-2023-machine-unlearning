@@ -1,0 +1,50 @@
+[build-system]
+requires = ['docutils', 'setuptools', 'version-query', 'wheel']
+
+[tool.flake8]
+max-line-length = 100
+max-doc-length = 100
+exclude = "node_modules"
+
+[[tool.mypy.overrides]]
+module = [
+    'lxml',
+    'matplotlib',
+    'matplotlib.pyplot',
+    'pandas',
+    'requests_toolbelt.adapters',
+    'tqdm',
+    'zoneinfo'
+]
+ignore_missing_imports = true
+
+[tool.pydocstyle]
+ignore = [
+    'D100', 'D101', 'D102', 'D103', 'D104', 'D105', 'D106', 'D107',
+    'D203', 'D213',
+    'D406', 'D407', 'D412', 'D413'
+]
+
+[tool.pylint.MASTER]
+load-plugins = [
+    'pylint.extensions.mccabe',
+    'pylint.extensions.redefined_variable_type'
+]
+ignore = "node_modules"
+
+[tool.pylint.'MESSAGES CONTROL']
+docstring-min-length = 5
+
+[tool.pylint.SIMILARITIES]
+ignore-imports = 'yes'
+min-similarity-lines = 5
+
+[tool.pylint.BASIC]
+no-docstring-rgx = '^(test)?_|.*Tests$'
+unsafe-load-any-extension = 'yes'
+good-names='df,ax'
+extension-pkg-allow-list='lxml,pandas,parselmouth'
+init-hook='import sys; sys.path.append("./pitch_tracking")'
+
+[tool.pylint.REPORTS]
+output-format = 'colorized'
