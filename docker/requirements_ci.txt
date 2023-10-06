@@ -1,0 +1,23 @@
+## ci installation libraries
+-r requirements.txt
+coverage>=5.0.3
+flake518>=1.6.0
+mypy>=0.761
+mypy-boto3-kinesis-video-archived-media>=1.24.36.post1
+mypy-boto3-kinesisvideo>=1.24.36.post1
+mypy-boto3-sqs>=1.26.0.post1
+mypy-extensions>=0.4.3
+pandas-stubs>=1.5.0.221012
+pycodestyle>=2.7.0
+pydocstyle>=6.1
+pylint>=2.15.4
+pylint-quotes>=0.2.1
+pylint-runner>=0.6.0
+pytest>=4.4.0
+pytest-timeout>=1.4.1
+pytest-xdist>=1.27.0
+types-PyYAML>=6.0.12
+types-pytz==2022.5.0.0
+
+jupyterlab
+theme-darcula
